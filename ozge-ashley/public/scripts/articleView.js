@@ -73,8 +73,11 @@ articleView.setTeasers = () => {
   });
 };
 
-// COMMENT: When/where is this function invoked? What event ultimately triggers its execution? Explain the sequence of code execution when this function is invoked.
-// PUT YOUR RESPONSE HERE
+// COMMENT: When/where is this function invoked? What event ultimately triggers its execution?
+//Explain the sequence of code execution when this function is invoked.
+// It is called in new.html  It creates a event on input, textarea and submit button.When you are in
+//text area it focuses on selecting box.Basically when you write a aricle and press the submit button it
+// calls create() function to create article
 articleView.initNewArticlePage = () => {
   $('.tab-content').show();
   $('#export-field').hide();
@@ -87,7 +90,7 @@ articleView.initNewArticlePage = () => {
 };
 
 // COMMENT: When is this function called? What event ultimately triggers its execution?
-// PUT YOUR RESPONSE HERE
+// its called from initNewArticlePage() function and it takes the article data and append it to html file.
 articleView.create = () => {
   let article;
   $('#articles').empty();
@@ -112,7 +115,7 @@ articleView.create = () => {
 };
 
 // COMMENT: When is this function called? What event ultimately triggers its execution?
-// PUT YOUR RESPONSE HERE
+// its called from initNewArticlePage  when user press the submit button it takes the data and call insertRecord() function
 articleView.submit = event => {
   event.preventDefault();
   let article = new Article({
@@ -125,7 +128,8 @@ articleView.submit = event => {
   });
 
   // COMMENT: Where is this function defined? When is this function called? What event ultimately triggers its execution?
-  // PUT YOUR RESPONSE HERE
+  // This function is defined in article.js file. insertRecord takes the new article that has been made and submit that data
+  //to the backend. Submit evet trigers its execution.
   article.insertRecord();
 }
 

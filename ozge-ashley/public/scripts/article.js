@@ -50,7 +50,8 @@ Article.prototype.insertRecord = function(callback) {
       console.log(data);
 
       // COMMENT: What is the purpose of this line? Is the callback invoked when this method is called? Why or why not?
-      // PUT YOUR RESPONSE HERE
+      //The pupose of this line is , it passing the  new article to the backend by invoking from insertRecord method.Its invoked
+      // because it pass the data with callback function.
       if (callback) callback();
     })
 };
