@@ -21,3 +21,7 @@ app.post('/articles', bodyParser, function(request, response) {
 });
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
+
+app.use((req, res, next) => {
+  res.status(404).send('Invaild request');
+});
