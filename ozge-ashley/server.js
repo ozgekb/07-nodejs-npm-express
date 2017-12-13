@@ -5,6 +5,11 @@
 const bodyParser = require('body-parser').urlencoded({extended: true});
 const PORT = process.env.PORT || 3000;
 
+app.use(express.static('./public'));
+// COMMENT: The public directory is the front end directory determing what the user sees. Express.js 
+// communicates between the front end and the back end making sure we get the data we want.
+
+
 app.post('/articles', bodyParser, function(request, response) {
   // REVIEW: This route will receive a new article from the form page, new.html, and log that form data to the console. We will wire this up soon to actually write a record to our persistence layer!
   console.log(request.body);
