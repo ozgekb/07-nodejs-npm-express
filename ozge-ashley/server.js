@@ -3,6 +3,8 @@
 // REVIEW: There is a package here called body-parser, which is used by the provided POST route. Be sure to install that and save it as a dependency after you create your package.json.
 
 const bodyParser = require('body-parser').urlencoded({extended: true});
+const express = require('express')
+const app = express()
 const PORT = process.env.PORT || 3000;
 
 app.use(express.static('./public'));
@@ -15,3 +17,5 @@ app.post('/articles', bodyParser, function(request, response) {
   console.log(request.body);
   response.send('Record posted to server!!');
 })
+
+app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
