@@ -20,8 +20,8 @@ app.post('/articles', bodyParser, function(request, response) {
   response.send('Record posted to server!!');
 });
 
-app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
-
-app.use((req, res, next) => {
+app.use((req, res) => {
   res.status(404).send('Invaild request');
 });
+
+app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
