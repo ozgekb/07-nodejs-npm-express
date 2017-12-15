@@ -1,5 +1,7 @@
 {
   "globals": {
+    "Article": true,
+    "articleView": true,
     "rawData": true,
     "app": true,
     "Handlebars": true,
